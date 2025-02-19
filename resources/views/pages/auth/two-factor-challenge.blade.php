@@ -94,7 +94,7 @@ new class extends Component
 
 ?>
 
-<x-auth::layouts.app title="{{ trans(config('devdojo.auth.language.twoFactorChallenge.page_title')) }}">
+<x-auth::layouts.app title="{{ __(config('devdojo.auth.language.twoFactorChallenge.page_title')) }}">
     @volt('auth.two-factor-challenge')
         <x-auth::elements.container>
             <div x-data x-on:code-input-complete.window="console.log(event); $dispatch('submitCode', [event.detail.code])" class="relative w-full h-auto">

@@ -32,7 +32,7 @@ new class extends Component
             return;
         }
 
-        $this->addError('email', trans($response));
+        $this->addError('email', __($response));
     }
 };
 
@@ -67,13 +67,13 @@ new class extends Component
             </div>
         @else
             <form wire:submit="sendResetPasswordLink" class="space-y-5">
-                <x-auth::elements.input :label="trans(config('devdojo.auth.language.passwordResetRequest.email'))" type="email" id="email" name="email" data-auth="email-input" wire:model="email" autofocus="true" autocomplete="email" />
-                <x-auth::elements.button type="primary" data-auth="submit-button" rounded="md" submit="true">{{trans(config('devdojo.auth.language.passwordResetRequest.button'))}}</x-auth::elements.button>
+                <x-auth::elements.input :label="__(config('devdojo.auth.language.passwordResetRequest.email'))" type="email" id="email" name="email" data-auth="email-input" wire:model="email" autofocus="true" autocomplete="email" />
+                <x-auth::elements.button type="primary" data-auth="submit-button" rounded="md" submit="true">{{__(config('devdojo.auth.language.passwordResetRequest.button'))}}</x-auth::elements.button>
             </form>
         @endif
         <div class="mt-3 space-x-0.5 text-sm leading-5 text-center" style="color:{{ config('devdojo.auth.appearance.color.text') }}">
-            <span class="opacity-[47%]">{{trans(config('devdojo.auth.language.passwordResetRequest.or'))}}</span>
-            <x-auth::elements.text-link data-auth="login-link" href="{{ route('auth.login') }}">{{trans(config('devdojo.auth.language.passwordResetRequest.return_to_login'))}}</x-auth::elements.text-link>
+            <span class="opacity-[47%]">{{__(config('devdojo.auth.language.passwordResetRequest.or'))}}</span>
+            <x-auth::elements.text-link data-auth="login-link" href="{{ route('auth.login') }}">{{__(config('devdojo.auth.language.passwordResetRequest.return_to_login'))}}</x-auth::elements.text-link>
         </div>
     </x-auth::elements.container>
     @endvolt
