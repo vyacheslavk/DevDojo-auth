@@ -27,12 +27,12 @@ new class extends Component
         $response = Password::broker()->sendResetLink(['email' => $this->email]);
 
         if ($response == Password::RESET_LINK_SENT) {
-            $this->emailSentMessage = $response);
+            $this->emailSentMessage = trans($response);
 
             return;
         }
 
-        $this->addError('email', __($response));
+        $this->addError('email', trans($response));
     }
 };
 
